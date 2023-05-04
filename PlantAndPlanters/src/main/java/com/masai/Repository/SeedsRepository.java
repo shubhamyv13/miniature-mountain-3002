@@ -1,4 +1,4 @@
-package src.main.java.com.masai.Repository;
+package com.masai.Repository;
 
 import java.util.List;
 
