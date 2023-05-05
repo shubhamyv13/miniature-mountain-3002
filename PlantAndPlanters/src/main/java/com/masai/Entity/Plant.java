@@ -1,5 +1,7 @@
 package com.masai.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +23,7 @@ public class Plant {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonIgnore
 	private Integer plantId;
 	
 	@NotNull(message = "{null.invalid}")
@@ -66,5 +69,5 @@ public class Plant {
 	
 	@Min(value = 1 , message = "plant cost cannot be zero")
 	@NotNull(message = "{null.invalid}")
-	private double plantCost;
+	private Double plantCost;
 }

@@ -3,6 +3,8 @@ package com.masai.Entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -24,6 +26,7 @@ public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	@JsonIgnore
 	private Integer customerId;
 	
 	@NotNull(message = "Name field should not be empty")

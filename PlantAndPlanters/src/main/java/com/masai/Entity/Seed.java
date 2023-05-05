@@ -1,5 +1,7 @@
 package com.masai.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +22,7 @@ import lombok.NoArgsConstructor;
 public class Seed {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonIgnore
 	private Integer seedId;
 	
 	@NotBlank(message = "{blank.invalid}")
