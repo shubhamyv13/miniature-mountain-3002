@@ -17,6 +17,8 @@ import com.masai.Entity.Seed;
 import com.masai.Exception.SeedException;
 import com.masai.Service.SeedService;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class SeedController {
 
