@@ -24,6 +24,18 @@ public class GlobalExceptionsHandler {
 		return new ResponseEntity<MyErrorDetails>(myErrorDetails,HttpStatus.BAD_REQUEST);
 	}
 	
+	@ExceptionHandler(PlantException.class)
+	public ResponseEntity<MyErrorDetails> handlePlantExceptions(PlantException pe,WebRequest wr){
+		
+		MyErrorDetails myErrorDetails = new MyErrorDetails();
+		
+		myErrorDetails.setLocalDateTime(LocalDateTime.now());
+		myErrorDetails.setDescription(wr.getDescription(false));
+		myErrorDetails.setMesseage(pe.getMessage());
+		
+		return new ResponseEntity<MyErrorDetails>(myErrorDetails,HttpStatus.BAD_REQUEST);
+	}
+	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<MyErrorDetails> handleGlobalExceptions(Exception se,WebRequest wr){
 		
