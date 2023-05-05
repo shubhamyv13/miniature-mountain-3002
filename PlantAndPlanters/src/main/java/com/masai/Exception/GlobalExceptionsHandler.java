@@ -100,5 +100,17 @@ public class GlobalExceptionsHandler {
 		
 		return new ResponseEntity<MyErrorDetails>(myErrorDetails,HttpStatus.BAD_REQUEST);
 	}
+
+	@ExceptionHandler(PlanterException.class)
+	public ResponseEntity<MyErrorDetails> handlePlanterExceptions(PlanterException ce,WebRequest wr){
+		
+		MyErrorDetails myErrorDetails = new MyErrorDetails();
+		
+		myErrorDetails.setLocalDateTime(LocalDateTime.now());
+		myErrorDetails.setDescription(wr.getDescription(false));
+		myErrorDetails.setMesseage(ce.getMessage());
+		
+		return new ResponseEntity<MyErrorDetails>(myErrorDetails,HttpStatus.BAD_REQUEST);
+	}
 	
 }
