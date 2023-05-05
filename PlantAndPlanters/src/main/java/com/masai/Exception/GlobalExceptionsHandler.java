@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
+import com.masai.Exception.CustomerException;
+import com.masai.Exception.MyErrorDetails;
+import com.masai.Exception.OrdersException;
+
 @ControllerAdvice
 public class GlobalExceptionsHandler {
 	
@@ -57,6 +61,42 @@ public class GlobalExceptionsHandler {
 		myErrorDetails.setLocalDateTime(LocalDateTime.now());
 		myErrorDetails.setDescription(se.getBindingResult().getFieldError().getDefaultMessage());
 		myErrorDetails.setMesseage("Validation Error"); // clear exception from IA
+		
+		return new ResponseEntity<MyErrorDetails>(myErrorDetails,HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(CustomerException.class)
+	public ResponseEntity<MyErrorDetails> handleCustomerExceptions(CustomerException ce,WebRequest wr){
+		
+		MyErrorDetails myErrorDetails = new MyErrorDetails();
+		
+		myErrorDetails.setLocalDateTime(LocalDateTime.now());
+		myErrorDetails.setDescription(wr.getDescription(false));
+		myErrorDetails.setMesseage(ce.getMessage());
+		
+		return new ResponseEntity<MyErrorDetails>(myErrorDetails,HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(OrdersException.class)
+	public ResponseEntity<MyErrorDetails> handleOrderExceptions(OrdersException oe,WebRequest wr){
+		
+		MyErrorDetails myErrorDetails = new MyErrorDetails();
+		
+		myErrorDetails.setLocalDateTime(LocalDateTime.now());
+		myErrorDetails.setDescription(wr.getDescription(false));
+		myErrorDetails.setMesseage(oe.getMessage());
+		
+		return new ResponseEntity<MyErrorDetails>(myErrorDetails,HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(AddressException.class)
+	public ResponseEntity<MyErrorDetails> handleAddressExceptions(AddressException oe,WebRequest wr){
+		
+		MyErrorDetails myErrorDetails = new MyErrorDetails();
+		
+		myErrorDetails.setLocalDateTime(LocalDateTime.now());
+		myErrorDetails.setDescription(wr.getDescription(false));
+		myErrorDetails.setMesseage(oe.getMessage());
 		
 		return new ResponseEntity<MyErrorDetails>(myErrorDetails,HttpStatus.BAD_REQUEST);
 	}
