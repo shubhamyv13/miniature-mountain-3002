@@ -17,6 +17,8 @@ import com.masai.Entity.Seed;
 import com.masai.Exception.SeedException;
 import com.masai.Service.SeedService;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class SeedController {
 
@@ -24,7 +26,7 @@ public class SeedController {
 	private SeedService seedService;
 	
 	@PostMapping("/seeds")
-	public ResponseEntity<Seed> addNewSeed(@RequestBody Seed seed) throws SeedException{
+	public ResponseEntity<Seed> addNewSeed(@Valid @RequestBody Seed seed) throws SeedException{
 		
 		Seed seed2 = seedService.addSeed(seed);
 		
@@ -33,7 +35,7 @@ public class SeedController {
 	}
 	
 	@PutMapping("/seeds/{seedId}")
-	public ResponseEntity<Seed> updateSeed(@PathVariable Integer seedId,@RequestBody Seed seed) throws SeedException{
+	public ResponseEntity<Seed> updateSeed(@Valid @PathVariable Integer seedId,@RequestBody Seed seed) throws SeedException{
 		
 		Seed seed2 = seedService.updateSeed(seedId,seed);
 		

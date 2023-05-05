@@ -50,7 +50,7 @@ public class Seed {
 	@NotBlank(message = "{blank.invalid}")
 	@NotNull(message = "{null.invalid}")
 	@NotEmpty(message = "{empty.invalid}")
-	@Size(min = 10,message = "Name cannot be less than 10 characters")
+	@Size(min = 10,message = "Description cannot be less than 10 characters")
 	private String seedsDescription;
 	
 	@Min(value = 0, message = "Seed's stock can't be negative")
