@@ -1,4 +1,4 @@
-package src.main.java.com.masai.Exception;
+package com.masai.Exception;
 
 public class CustomerException extends Exception {
 
