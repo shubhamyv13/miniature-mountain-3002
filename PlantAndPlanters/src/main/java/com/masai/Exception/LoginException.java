@@ -1,15 +1,17 @@
 package com.masai.Exception;
 
-public class OrdersException extends Exception {
+public class LoginException extends Exception {
 
-	public OrdersException() {
+	public LoginException() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public OrdersException(String message) {
+	public LoginException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 }
