@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.masai.Entity.CurrentUserSession;
 import com.masai.Entity.Customer;
 import com.masai.Exception.CustomerException;
 import com.masai.Repository.CurrentUserSessionRepository;
 import com.masai.Repository.CustomerRepository;
-import com.masai.Entity.*;
 
 @Service
 public class CustomerServiceImpl implements CustomerService{
