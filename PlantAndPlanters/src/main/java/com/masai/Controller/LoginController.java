@@ -1,4 +1,4 @@
-package src.main.java.com.masai.Controller;
+package com.masai.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -8,4 +8,5 @@ import com.masai.Entity.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer>{
 
+	public Customer findByUserName(String userName);
 }
