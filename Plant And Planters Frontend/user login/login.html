@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLANT & PLANTERS</title>
+    <link rel="icon" href="/images/P&P Logo.png" type="image/icon type">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body {
+            background-color: rgb(240, 242, 244);
+            font-family: 'Poppins', sans-serif;
+            width: 90%;
+            margin-top: 75px;
+            margin-left: 100px;
+            display: flex;
+        }
+
+        #main {
+            height: auto;
+            width: 30%;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color: white;
+        }
+
+        #logo {
+            margin: auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        #logo img {
+            margin-top: 20px;
+            width: 70px;
+        }
+
+        #sign {
+            text-decoration: none;
+        }
+
+        #sign:hover {
+            text-decoration-line: underline;
+        }
+
+        form>h3>a {
+            color: rgb(62, 190, 180);
+        }
+
+        form>h3 {
+            margin-top: 25px;
+            padding-left: 30%;
+            color: rgb(59, 58, 58);
+        }
+
+        form>h1 {
+            margin-top: 25px;
+            text-align: left;
+            padding-left: 10%;
+            color: rgb(59, 58, 58);
+        }
+
+        form>h4 {
+            text-align: left;
+            padding-left: 10%;
+            color: rgb(83, 82, 82);
+            margin-bottom: 10px;
+        }
+
+        form>input {
+            width: 75%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid rgb(85, 200, 85);
+            background: transparent;
+        }
+
+        .next {
+            margin-top: 25px;
+            width: 80%;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: rgb(105, 220, 105);
+            font-size: 16px;
+            color: white;
+            border: 1px solid rgb(105, 220, 105);
+            transition: 0.5s linear;
+        }
+
+        .next:hover {
+            cursor: pointer;
+            background-color: rgb(95, 185, 95);
+            transform: scale(1.05);
+            z-index: 2;
+            color: black;
+        }
+
+        hr {
+            margin: 30px 50px 30px;
+        }
+
+        #apps {
+            text-align: left;
+            padding-left: 10%;
+            color: rgb(59, 58, 58);
+        }
+
+        .admin {
+            width: 80%;
+            margin: 10px auto 10px;
+            padding: 10px;
+            font-size: 16px;
+            color: rgb(83, 82, 82);
+            background-color: white;
+            border: 1px solid rgb(95, 185, 95);
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+
+        .admin:hover {
+            cursor: pointer;
+            background-color: rgb(95, 185, 95);
+            transform: scale(1.05);
+            z-index: 2;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="/index.html"><img src="/images/P&P Image.png" alt=""></a>
+    <div id="main">
+        <h1>Log in</h1>
+
+        <form>
+            <h4>Email address</h4>
+            <input type="text" placeholder="Enter your email" id="email">
+
+            <h4>Password</h4>
+            <input type="text" class="second" placeholder="Enter your password" id="password">
+
+            <a href="/index.html"><button type="submit" class="next">Next</button></a>
+        </form>
+
+        <hr>
+
+        <div id="apps">
+            <h3>Or login as</h3>
+        </div>
+        <button class="admin">ADMIN</button>
+
+        <h3>Don't have an account? <a href="signup.html" id="sign">Sign up</a></h3>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    let form = document.querySelector("form");
+
+    let signupData = JSON.parse(localStorage.getItem("masai")) || [];
+    form.addEventListener("submit", myFun)
+    function myFun(event) {
+        event.preventDefault()
+
+        let x = document.querySelector("#email").value
+        let y = document.querySelector("#password").value
+        let flag = false
+        function login(data) {
+            for (let i = 0; i <= data.length - 1; i++) {
+                if (data[i].email === x && data[i].pass === y) {
+                    flag = true
+                    break;
+                }
+            }
+            if (x == "" || y == "") {
+                alert("please fill the details")
+            } else {
+                if (flag == true) {
+                    alert("Welcome To Survey Homes")
+                    window.location.href = "index.html"
+
+                } else {
+                    alert("wrong credentials")
+                }
+            }
+        }
+        login(signupData)
+    }
+
+</script>

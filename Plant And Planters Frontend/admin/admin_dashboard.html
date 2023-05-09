@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN DASHBOARD</title>
+    <link rel="icon" href="/images/P&P Logo.png" type="image/icon type">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: auto;
+            text-align: center;
+            padding: 0;
+            width: 90%;
+        }
+
+        h1 {
+            text-decoration: underline;
+            margin-bottom: 50px;
+        }
+
+        #menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 200px;
+            row-gap: 50px;
+        }
+
+        #menu>div {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid rgb(150, 200, 100);
+            border-radius: 5px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        #menu>h2 {
+            margin-top: 75px;
+            text-align: left;
+        }
+
+        #menu>div>a>button {
+            color: black;
+            background-color: rgb(150, 200, 100);
+            font-size: medium;
+            margin: 10px;
+            padding: 10px 20px 10px;
+            border-radius: 5px;
+            border: 0px;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        #menu>div>a>button:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>ADMIN DASHBOARD</h1>
+
+    <!-- Menu Section -->
+    <div id="menu">
+
+        <div>
+            <h2>Planters Menu</h2>
+            <a href="/planters/addPlanter.html"><button>Add Planter</button></a>
+            <a href="/planters/updatePlanter.html"><button>Update Planter</button></a>
+            <a href="/planters/deletePlanter.html"><button>Delete Planter</button></a>
+            <a href="/planters/planterById.html"><button>View Planter by PlanterId</button></a>
+            <a href="/planters/viewAllPlanters.html"><button>View All Planters</button></a>
+        </div>
+
+        <div>
+            <h2>Plant Menu</h2>
+            <a href=""><button>Add Plant</button></a>
+            <a href=""><button>Update Plant</button></a>
+            <a href=""><button>Delete Plant</button></a>
+            <a href=""><button>View Plant by PlantId</button></a>
+            <a href=""><button>View All Plants</button></a>
+        </div>
+
+        <div>
+            <h2>Seed Menu</h2>
+            <a href="/seeds/addSeeds.html"><button>Add Seed</button></a>
+            <a href="/seeds/updateSeeds.html"><button>Update Seed</button></a>
+            <a href="/seeds/deleteSeeds.html"><button>Delete Seed</button></a>
+            <a href="/seeds/seedsById.html"><button>View Seed by SeedId</button></a>
+            <a href="/seeds/viewAllSeeds.html"><button>View All Seed</button></a>
+        </div>
+
+        <div>
+            <h2>Customers Menu</h2>
+            <a href="/customer/addCustomer.html"><button>Add Customer</button></a>
+            <a href=""><button>Update Customer</button></a>
+            <a href=""><button>Delete Customer</button></a>
+            <a href=""><button>View Customer by CustomerId</button></a>
+            <a href=""><button>View All Customer</button></a>
+        </div>
+
+        <div>
+            <h2>Orders Menu</h2>
+            <a href=""><button>View All Orders</button></a>
+            <a href=""><button>View Order by OrderId</button></a>
+            <a href=""><button>abcd</button></a>
+            <a href=""><button>abcd</button></a>
+            <a href=""><button>abcd</button></a>
+        </div>
+
+    </div>
+
+</body>
