@@ -11,27 +11,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.Entity.LoginDTO;
 import com.masai.Exception.LoginException;
+import com.masai.Service.LoginAdminService;
 import com.masai.Service.LoginService;
-
-
 
 @RestController
 @CrossOrigin(origins = "*")
-public class LoginController {
+public class LoginAdminController {
 
 	@Autowired
-	private LoginService loginService;
+	private LoginAdminService loginAdminService;
 	
-	@PostMapping("/login")
+	@PostMapping("/adminLogin")
 	public ResponseEntity<String> logInCustomer(@RequestBody LoginDTO dto) throws LoginException {
 		
-		String result = loginService.logIntoAccount(dto);
+		String result = loginAdminService.logIntoAccount(dto);
 			
 		return new ResponseEntity<String>(result,HttpStatus.OK );
 	}
 	
-	@PostMapping("/logout")
+	@PostMapping("/adminLogout")
 	public String logoutCustomer(@RequestParam(required = false) String token) throws LoginException {
-		return loginService.logOutFromAccount(token);	
+		return loginAdminService.logOutFromAccount(token);	
 	}
 }

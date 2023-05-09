@@ -49,6 +49,9 @@ public class Customer {
 	@Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d).{8,}$", message = "Please enter valid password" )
 	private String password;
 	
+//	@Column(columnDefinition = "boolean default false")
+	private Integer isActive = 1;
+	
 	@Embedded
 	@ElementCollection
 	@JoinTable(name = "address")
