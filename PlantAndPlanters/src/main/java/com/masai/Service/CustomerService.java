@@ -11,11 +11,11 @@ public interface CustomerService {
 
 	public Customer updateCustomer(Customer customer,String token) throws CustomerException;
 
-	public Customer deleteCustomer(Integer customerId,String token) throws CustomerException;
+	public Customer deleteCustomer(Integer customerId, String token, Integer adminId) throws CustomerException;
 
-	public Customer viewCustomer(int customerId) throws CustomerException;
+	public Customer viewCustomer(Integer customerId,String token, Integer adminId) throws CustomerException;
 
-	public List<Customer> viewAllCustomer() throws CustomerException;
+	public List<Customer> viewAllCustomer(String token, Integer adminId) throws CustomerException;
 
-	public Customer validateCustomer(String userName, String password) throws CustomerException;
+//	public Customer validateCustomer(String userName, String password) throws CustomerException;
 }

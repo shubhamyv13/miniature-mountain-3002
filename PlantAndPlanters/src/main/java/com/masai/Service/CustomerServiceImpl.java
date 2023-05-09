@@ -1,13 +1,18 @@
 package com.masai.Service;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.masai.Entity.Address;
+import com.masai.Entity.CurrentAdminSession;
 import com.masai.Entity.CurrentUserSession;
 import com.masai.Entity.Customer;
 import com.masai.Exception.CustomerException;
+import com.masai.Repository.AdminRepository;
+import com.masai.Repository.CurrentAdminSessionRepository;
 import com.masai.Repository.CurrentUserSessionRepository;
 import com.masai.Repository.CustomerRepository;
 
@@ -19,6 +24,12 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	@Autowired
 	private CurrentUserSessionRepository currentUserSessionRepository;
+	
+	@Autowired
+	private CurrentAdminSessionRepository currentAdminSessionRepository;
+	
+	@Autowired
+	private AdminRepository adminRepository;
 	
 
 	@Override
@@ -51,30 +62,75 @@ public class CustomerServiceImpl implements CustomerService{
 	}
 
 	@Override
-	public Customer deleteCustomer(Integer customerId, String token) throws CustomerException {
+	public Customer deleteCustomer(Integer customerId, String token, Integer adminId) throws CustomerException {
+		// TODO Auto-generated method stub
+		CurrentAdminSession loggedInAdmin= currentAdminSessionRepository.findByToken(token);
+		
+		if(loggedInAdmin == null) throw new CustomerException("Please provide a valid key to update a customer");
+
+		if(adminId == loggedInAdmin.getUserId()) {
+			
+			Customer currentCustomer = customerRepository.findById(customerId).orElseThrow(()-> new CustomerException("Customer Not founde by id :"));
+				
+			    Set<Address> addressSet = currentCustomer.getAddressSet();
+			    
+			    addressSet = null;
+			    
+				customerRepository.deleteById(customerId);
+				
+				return currentCustomer;
+		}
+		
+		
+		throw new CustomerException("Invalid Admin Details, please login first");
+	}
+
+	@Override
+	public Customer viewCustomer(Integer customerId,String token, Integer adminId) throws CustomerException {
 		// TODO Auto-generated method stub
 		
-//		Customer 
+		CurrentAdminSession loggedInAdmin= currentAdminSessionRepository.findByToken(token);
 		
-		return null;
+		if(loggedInAdmin == null) throw new CustomerException("Please provide a valid key to update a customer");
+
+		if(adminId == loggedInAdmin.getUserId()) {
+			
+			Customer currentCustomer = customerRepository.findById(customerId).orElseThrow(()-> new CustomerException("Customer Not founde by id :"));	
+			return currentCustomer;
+		}
+		
+		
+		throw new CustomerException("Invalid Admin Details, please login first");
+		
 	}
 
 	@Override
-	public Customer viewCustomer(int customerId) throws CustomerException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Customer> viewAllCustomer(String token, Integer adminId) throws CustomerException {
+		// TODO Auto-generated method stub.
+		
+		CurrentAdminSession loggedInAdmin= currentAdminSessionRepository.findByToken(token);
+		
+		if(loggedInAdmin == null) throw new CustomerException("Please provide a valid key to update a customer");
+
+		if(adminId == loggedInAdmin.getUserId()) {
+			
+			List<Customer> customerList = customerRepository.findAll(); 
+				
+			if(customerList.size()>0) return customerList;
+			
+			else {				
+				throw new CustomerException("No Customer Founded");
+			}
+		}
+		
+		
+		throw new CustomerException("Invalid Admin Details, please login first");
 	}
 
-	@Override
-	public List<Customer> viewAllCustomer() throws CustomerException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Customer validateCustomer(String userName, String password) throws CustomerException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Customer validateCustomer(String userName, String password) throws CustomerException {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 }
