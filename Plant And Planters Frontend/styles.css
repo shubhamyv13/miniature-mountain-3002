@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+body>a {
+    margin-top: 15px;
+}
+
+#top {
+    margin: auto;
+    width: auto;
+    height: auto;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: white;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 10;
+}
+
+#top>div:nth-child(2) {
+    width: 80%;
+    height: auto;
+}
+
+#top>div>div {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-right: 25px;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+#top>div>div>input {
+    height: 25px;
+    width: 100%;
+    margin-right: 20px;
+    padding-left: 20px;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+}
+
+#top>div>div>a>img {
+    margin-left: 40px;
+    height: 30px;
+}
+
+#top>div>div>a>button {
+    margin-top: 10px;
+    padding: 5px 10px 5px;
+    color: white;
+    background-color: rgb(150, 200, 100);
+    border: 0px;
+    border-radius: 4px;
+    font-size: small;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.5s;
+}
+
+#top>div>div>a>button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#top>div>a>img {
+    margin: 0px 25px 0px;
+    height: 100px;
+}
+
+#nav {
+    margin: 25px auto 25px;
+    width: 90%;
+    height: 50px;
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#nav>div {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+#nav>div {
+    color: black;
+    transition: 0.5s;
+}
+
+#nav>div:hover {
+    transform: scale(1.05);
+}
+
+#nav>div>a {
+    color: black;
+    text-decoration: solid;
+    font-size: 17px;
+}
+
+#nav>div>a:hover {
+    color: rgb(150, 200, 100);
+    text-decoration: underline;
+}
+
+#banner {
+    width: 90%;
+    border-radius: 10px;
+    margin: 25px auto 25px;
+}
+
+#banner>img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: 0.5s;
+}
+
+#banner>img:hover {
+    cursor: pointer;
+    transform: scale(1.015);
+}
+
+#banner-mid {
+    width: 90%;
+    margin: 25px auto 25px;
+}
+
+#banner-mid>div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#banner-mid>div>img {
+    width: 55vh;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: 0.5s;
+}
+
+#banner-mid>div>img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#banner-mid>p {
+    margin: 75px 0px 75px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    color: rgb(150, 200, 100);
+}
+
+#bottom {
+    margin: auto;
+    width: 100%;
+    margin-top: 75px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    border-bottom: 0.25px solid lightgray;
+}
+
+#bottom>div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#bottom>div>div>a>img {
+    width: 175px;
+    margin-top: 15px;
+    transition: 0.5s;
+}
+
+#bottom>div>div>a>img:hover {
+    transform: scale(1.05);
+}
+
+#bottom>div>div>h3 {
+    font-weight: normal;
+    margin-top: 25px;
+}
+
+#bottom>div>div>p {
+    font-size: small;
+    color: rgb(100, 100, 100);
+}
+
+#bottom>div>div>input {
+    margin-bottom: 20px;
+    width: 90%;
+    height: 35px;
+    padding-left: 20px;
+}
+
+#bottom>div>div>a>button {
+    color: white;
+    background-color: rgb(150, 200, 100);
+    padding: 10px 20px 10px;
+    border-radius: 3px;
+    border: 0px;
+    transition: 0.5s;
+}
+
+#bottom>div>div>a>button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#footer {
+    margin: auto;
+    width: 90%;
+    height: 55px;
+    border-top: 0.25px solid lightgray;
+    border-bottom: 0.25px solid lightgray;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer>img {
+    height: 75%;
+    margin: auto;
+}
+
+#footer>svg {
+    height: 50%;
+    margin: auto;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#footer>svg:hover {
+    transform: scale(1.1);
+}
+
+body>p {
+    margin: 30px;
+    text-align: center;
+    font-size: small;
+}
+
+/* login page */
+
+#main {
+    margin: 50px auto 50px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu-bar {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#menu-bar>a>button {
+    width: 100%;
+    color: black;
+    background-color: rgb(150, 200, 100);
+    font-size: medium;
+    padding: 10px 20px 10px;
+    border-radius: 3px;
+    border: 0px;
+    margin: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+#menu-bar>a>button:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+#loginpage {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#loginpage>div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px 25px;
+    background-color: rgb(251, 251, 251);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#loginpage>div>form {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginpage>div>form>input {
+    display: block;
+    width: 250px;
+    height: 25px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+#signup,
+#login {
+    width: auto;
+    margin-top: 20px;
+    padding: 5px 20px 5px;
+    border: 0px;
+    color: white;
+    background-color: rgb(150, 200, 100);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loginpage>div>form>input:last-child {
+    width: auto;
+    margin-top: 20px;
+    padding: 5px 20px 5px;
+    border: 0px;
+    color: white;
+    background-color: rgb(150, 200, 100);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Products Page */
+
+#all-products {
+    margin: 50px auto 50px;
+    width: 90%;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 50px;
+}
+
+#filter {
+    width: 90%;
+    margin: 50px auto 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#filter>div {
+    margin: auto;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+#filter>div>select {
+    margin: auto;
+    padding: 5px 10px 5px;
+    border-radius: 3px;
+    border: 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 8px;
+}
+
+#container {
+    margin: auto;
+    padding: 0px 40px 40px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+}
+
+#container>div {
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: 0.5s;
+}
+
+#container>div:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#container>div>p {
+    font-size: small;
+}
+
+#container>div>img {
+    width: 75%;
+    height: auto;
+}
+
+#container>div>button {
+    margin: 0px 5px 0px;
+    padding: 5px 10px 5px;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(150, 200, 100);
+    cursor: pointer;
+}
+
+/* My Favourite Page */
+
+#cont {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cont-main {
+    margin: 25px auto 25px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(251, 251, 251);
+}
+
+#cont-head {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#cont-head>a>button {
+    margin: 0px 5px 0px;
+    padding: 5px 10px 5px;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(150, 200, 100);
+    cursor: pointer;
+}
+
+#favourites {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 0px 25px 25px;
+}
+
+#favourites>div {
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#favourites>div:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+#favourites>div>img {
+    width: 50%;
+    height: auto;
+}
+
+#favourites>div>p {
+    font-size: small;
+}
+
+#favourites>div>button {
+    margin: 0px 5px 0px;
+    padding: 5px 10px 5px;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(150, 200, 100);
+    cursor: pointer;
+}
+
+#favourites>div>button:last-child {
+    margin: 0px 5px 0px;
+    padding: 5px 10px 5px;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(234, 65, 54);
+    cursor: pointer;
+}
+
+/* Cart Page */
+
+#cont-head>div {
+    display: flex;
+    justify-content: space-around;
+}
+
+#cont-head>div>a>button {
+    padding: 5px 10px 5px;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(150, 200, 100);
+    cursor: pointer;
+}
+
+#cartItems {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 0px 25px 25px;
+}
+
+#cartItems>div {
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#cartItems>div:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+#cartItems>div>img {
+    width: 50%;
+    height: auto;
+}
+
+#cartItems>div>p {
+    font-size: small;
+}
+
+#cartItems>div>button {
+    margin: auto;
+    padding: 5px 10px 5px;
+    border: 0px;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(234, 65, 54);
+    cursor: pointer;
+}
+
+/* My Order Page */
+
+#cont-head>input {
+    margin-right: 10px;
+    padding: 2px;
+}
+
+/* Checkout Page */
+
+#checkout {
+    margin: 50px auto 50px;
+    width: 17.5%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: rgb(251, 251, 251);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#checkout>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+#checkout>form>input {
+    display: block;
+    width: auto;
+    height: 25px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+#checkout>form>div {
+    display: block;
+    width: auto;
+    height: 25px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+#checkout>form>div>select {
+    padding: 5px 10px 5px;
+}
+
+#checkout>form>input:last-child {
+    margin: 40px auto 0px;
+    height: 30px;
+    width: 125px;
+    border: 0px;
+    border-radius: 25px;
+    color: white;
+    background-color: rgb(150, 200, 100);
+    cursor: pointer;
+}
