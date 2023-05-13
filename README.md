@@ -12,7 +12,6 @@ The application also includes user and admin validation and authentication.
 - SPRINGBOOT
 - HIBERNATE
 - MAVEN
-- J.D.B.C
 - MYSQL
 - JPQL
 - POSTMAN
