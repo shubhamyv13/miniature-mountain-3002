@@ -5,6 +5,8 @@
 REST API for an Online Plant Nursery Platform that allows customers to view the list of plants, seeds, and planters. 
 The application also includes user and admin validation and authentication.
 
+![ERDiagram](https://github.com/hemant097/berserk-camera-3158/blob/main/ER%20diagram.png?raw=true)
+
 ## Tech Stack
 
 - JAVA
