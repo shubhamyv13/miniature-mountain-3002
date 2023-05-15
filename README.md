@@ -1,13 +1,17 @@
-# Online Plant Nursery Application
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com/?lines=Plant and Planters;&%20Code&center=true&width=700&height=50&weight=800&size=35&duration=2000&pause=2000">
+  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+</p> 
 
-## REST A.P.I
 REST API for an Online Plant Nursery Platform that allows customers to view the list of plants, seeds, and planters. 
 The application also includes user and admin validation and authentication.
 
+## ![ER_Diagram](https://img.shields.io/badge/ER_DIAGRAM-%231572B6.svg?style=for-the-badge)
 ![ERDiagram](https://github.com/hemant097/berserk-camera-3158/blob/main/ER%20diagram.png?raw=true)
 
-## Tech Stack
+
+## ![TECH_STACK](https://img.shields.io/badge/Tech_Stack-%231572B6.svg?style=for-the-badge)
 
 - JAVA
 - SPRING
@@ -21,7 +25,7 @@ The application also includes user and admin validation and authentication.
 - CSS
 - JAVASCRIPT
 
-## Dependencies
+## ![TECH_STACK](https://img.shields.io/badge/Dependencies-%231572B6.svg?style=for-the-badge)
 
 - SPRING DATA JPA
 - SPRING BOOT DEVTOOLS
@@ -31,7 +35,7 @@ The application also includes user and admin validation and authentication.
 - VALIDATION
 - LOMBOK
 
-## Setting & Installation 
+## ![TECH_STACK](https://img.shields.io/badge/Setting_&_Installation-%231572B6.svg?style=for-the-badge)
 
 Install the Spring Tools Suite 
 ```bash
@@ -86,6 +90,6 @@ Open the following URL for Swagger-UI
 http://localhost:8888/swagger-ui/
 ```
 
-## Acknowledgements
+## ![TECH_STACK](https://img.shields.io/badge/Acknowledgement-%231572B6.svg?style=for-the-badge)
 
 - [Masai School](https://www.masaischool.com/)
