@@ -145,9 +145,8 @@
     let sessionObj = JSON.parse(localStorage.getItem('responseObj'));
 
     window.addEventListener("load", () => {
-        console.log(sessionObj)
         event.preventDefault()
-        let url = `http://localhost:8080/customers/OfYJtD/1`;
+        let url = `http://localhost:8080/customers/${sessionObj.token}/${sessionObj.userId}`;
         fetch(url, {
             method: "GET",
             headers: {
