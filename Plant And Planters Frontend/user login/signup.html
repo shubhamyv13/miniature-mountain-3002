@@ -172,6 +172,7 @@
         </div>
 
         <button id="add_Customer" class="u-full-width button button-primary">Sign up</button>
+        <button class="u-full-width button button-primary"><a style="text-decoration: none; display: block; color: white;" href="/user login/login.html">Already an user, Login</a></button>
     </div>
 
 </body>
@@ -250,6 +251,7 @@
             if (data.customerName) {
                 responseObj = data
                 console.log(data);
+                window.location.href = "/user login/login.html";
             } else {
                 responseObj = data;
                 console.log(responseObj);

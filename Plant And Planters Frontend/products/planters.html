@@ -40,6 +40,16 @@
             background-color: rgb(150, 200, 100);
             color: white;
         }
+
+        .planterImg {
+            width: 25%;
+            padding: 0;
+        }
+
+        .planterImg>img {
+            width: 50%;
+
+        }
     </style>
 </head>
 
@@ -50,6 +60,7 @@
         <!-- Dont change order of columns -->
         <thead>
             <tr>
+                <th>Image</th>
                 <th>Planter Height</th>
                 <th>Planter Capacity ID</th>
                 <th>Drainage Holes</th>
@@ -79,6 +90,9 @@
 
             // document.querySelector("tbody").innerHTML= "";     If we do this here, it will lead to updation of earh tds
             let row = document.createElement("tr");
+            let image = document.createElement("td");
+            image.innerHTML = `<img src=${elem.url}>`;
+            image.setAttribute("class", "planterImg")
             let td1 = document.createElement("td");
             td1.innerText = elem.planterHeight;
             let td2 = document.createElement("td")
@@ -96,12 +110,12 @@
             let td8 = document.createElement("td");
             td8.innerText = "Add To Cart";
             td8.style.background = "red";
-            td8.style.color= "white";
+            td8.style.color = "white";
 
             td8.addEventListener("click", addToCart(elem));
 
 
-            row.append(td1, td2, td3, td4, td5, td6, td7,td8);
+            row.append(image, td1, td2, td3, td4, td5, td6, td7, td8);
 
             document.querySelector("tbody").append(row);
         });
@@ -128,23 +142,23 @@
     })
 
 
-    function addToCart(elem){
+    function addToCart(elem) {
 
-                console.log(elem);
-                 
-                //  //cartobj= JSON.parse(localStorage.getItem("cartobjLS")) || [];
-                //  if (cartobj[elem.id] === undefined) {
- 
-                //      cartobj[elem.id] = 1;
-                //      localStorage.setItem("cartobjLS",JSON.stringify(cartobj));
-                //      cartJS = JSON.parse(localStorage.getItem("cartLS")) || [];
-                //      cartJS.push(elem);
-                //      localStorage.setItem("cartLS", JSON.stringify(cartJS));
-                //      return alert("Product Added to Cart");
-                //  }
-                //  else{
-                //      return alert("Product Already in Cart");
-                //  }
+        console.log(elem);
+
+        //  //cartobj= JSON.parse(localStorage.getItem("cartobjLS")) || [];
+        //  if (cartobj[elem.id] === undefined) {
+
+        //      cartobj[elem.id] = 1;
+        //      localStorage.setItem("cartobjLS",JSON.stringify(cartobj));
+        //      cartJS = JSON.parse(localStorage.getItem("cartLS")) || [];
+        //      cartJS.push(elem);
+        //      localStorage.setItem("cartLS", JSON.stringify(cartJS));
+        //      return alert("Product Added to Cart");
+        //  }
+        //  else{
+        //      return alert("Product Already in Cart");
+        //  }
     }
 
 

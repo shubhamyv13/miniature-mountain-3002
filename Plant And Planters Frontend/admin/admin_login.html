@@ -140,17 +140,19 @@
         }).then((e) => {
             if (e.status == 200 || e.status == 201) {
                 alert("Login Successfull");
+                window.location.href = "/admin/admin_dashboard.html";
             }
             return e.json();
         }).then((data) => {
             if (data.messeage) {
                 alert(data.messeage);
             } else {
+                console.log(data)
                 // stringifying the myCountryInfo object and 
                 // storing it in the localStorage
                 responseObj= data;
                 localStorage.setItem('responseObj', JSON.stringify(responseObj))
-                window.location.href = "file:///C:/Users/yakhi/Downloads/Plant%20And%20Planters%20Frontend/Plant%20And%20Planters%20Frontend/admin/admin_dashboard.html";
+                window.location.href = "/admin/admin_dashboard.html";
             }
 
         }).catch((error) => console.log(error));

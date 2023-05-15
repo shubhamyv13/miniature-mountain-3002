@@ -142,20 +142,21 @@
         }).then((e) => {
             if (e.status == 200 || e.status == 201) {
                 alert("Login Successfull");
+                window.location.href = "/index.html";
             }
             return e.json();
         }).then((data) => {
             if (data.messeage) {
                 alert(data.messeage);
                 if(data.messeage == "User already Logged In with this username"){
-                    window.location.href = "file:///C:/Users/yakhi/Downloads/Plant%20And%20Planters%20Frontend/Plant%20And%20Planters%20Frontend/index.html";
+                    window.location.href = "/index.html";
                 }
             } else {
                 // stringifying the myCountryInfo object and 
                 // storing it in the localStorage
                 userLoginObj= data;
                 localStorage.setItem('userLoginObj', JSON.stringify(userLoginObj))
-                window.location.href = "file:///C:/Users/yakhi/Downloads/Plant%20And%20Planters%20Frontend/Plant%20And%20Planters%20Frontend/index.html";
+                window.location.href = "/index.html";
             }
 
         }).catch((error) => console.log(error));
