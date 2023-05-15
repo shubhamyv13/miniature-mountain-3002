@@ -27,6 +27,8 @@ public class Planter {
 	@JsonIgnore
 	private Integer planterId;
 	
+	private String url;
+	
 	@Min(value=1 , message = "Planter height should be more than 0")
 	@NotNull(message = "{null.invalid}")
 	private Double planterHeight;
