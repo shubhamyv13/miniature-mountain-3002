@@ -40,6 +40,16 @@
             background-color: rgb(150, 200, 100);
             color: white;
         }
+
+        .planterImg{
+            width: 25%;
+            padding: 0;
+        }
+
+        .planterImg> img{
+            width: 50%;
+
+        }
     </style>
 </head>
 
@@ -50,6 +60,7 @@
         <!-- Dont change order of columns -->
         <thead>
             <tr>
+                <th>Image</th>
                 <th>Planter Height</th>
                 <th>Planter Capacity ID</th>
                 <th>Drainage Holes</th>
@@ -76,8 +87,12 @@
         document.querySelector("tbody").innerHTML = ""
         todoarr.forEach(function (elem) {
 
-            // document.querySelector("tbody").innerHTML= "";     If we do this here, it will lead to updation of earh tds
+            // document.querySelector("tbody").innerHTML= "";     If we do this here, it will lead to updation of earh td
             let row = document.createElement("tr");
+
+            let image = document.createElement("td");
+            image.innerHTML = `<img src=${elem.url}>`;
+            image.setAttribute("class","planterImg")
             let td1 = document.createElement("td");
             td1.innerText = elem.planterHeight;
             let td2 = document.createElement("td")
@@ -93,7 +108,7 @@
             let td7 = document.createElement("td");
             td7.innerText = elem.planterCost;
 
-            row.append(td1, td2, td3, td4, td5, td6, td7);
+            row.append(image,td1, td2, td3, td4, td5, td6, td7);
 
             document.querySelector("tbody").append(row);
         });
