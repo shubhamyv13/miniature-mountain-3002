@@ -5,162 +5,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLANT & PLANTERS</title>
-    <link rel="icon" href="/images/P&P Logo.png" type="image/icon type">
+    <title>User Login</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-        body {
-            background-color: rgb(240, 242, 244);
+        * {
+            padding: 0;
+            margin: 0;
             font-family: 'Poppins', sans-serif;
+        }
+
+        body {
             width: 90%;
+            background-color: rgb(240, 242, 244);
+        }
+
+        .container {
+            display: flex;
             margin-top: 75px;
             margin-left: 100px;
-            display: flex;
+            justify-content: center;
         }
 
-        #main {
-            height: auto;
-            width: 30%;
+        h2 {
+            padding: 0 0 20px 0;
+            color: black;
+            font-size: 20px;
+        }
+
+        #box {
             margin: auto;
             text-align: center;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 22%;
+            padding: 40px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 5px;
+            color: rgb(71, 71, 71);
             background-color: white;
         }
 
-        #logo {
-            margin: auto;
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            font-size: 14px;
-        }
-
-        #logo img {
-            margin-top: 20px;
-            width: 70px;
-        }
-
-        #sign {
-            text-decoration: none;
-        }
-
-        #sign:hover {
-            text-decoration-line: underline;
-        }
-
-        form>h3>a {
-            color: rgb(62, 190, 180);
-        }
-
-        form>h3 {
-            margin-top: 25px;
-            padding-left: 30%;
-            color: rgb(59, 58, 58);
-        }
-
-        form>h1 {
-            margin-top: 25px;
-            text-align: left;
-            padding-left: 10%;
-            color: rgb(59, 58, 58);
-        }
-
-        form>h4 {
-            text-align: left;
-            padding-left: 10%;
-            color: rgb(83, 82, 82);
-            margin-bottom: 10px;
-        }
-
-        form>input {
-            width: 75%;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid rgb(85, 200, 85);
-            background: transparent;
-        }
-
-        .next {
-            margin-top: 25px;
-            width: 80%;
-            padding: 15px;
-            border-radius: 5px;
-            background-color: rgb(105, 220, 105);
-            font-size: 16px;
-            color: white;
-            border: 1px solid rgb(105, 220, 105);
-            transition: 0.5s linear;
-        }
-
-        .next:hover {
-            cursor: pointer;
-            background-color: rgb(95, 185, 95);
-            transform: scale(1.05);
-            z-index: 2;
-            color: black;
-        }
-
-        hr {
-            margin: 30px 50px 30px;
-        }
-
-        #apps {
-            text-align: left;
-            padding-left: 10%;
-            color: rgb(59, 58, 58);
-        }
-
-        .admin {
-            width: 80%;
-            margin: 10px auto 10px;
+        label {
+            display: block;
             padding: 10px;
-            font-size: 16px;
-            color: rgb(83, 82, 82);
-            background-color: white;
-            border: 1px solid rgb(95, 185, 95);
+            text-align: left;
+            margin-left: -10px;
+        }
+
+        input {
+            width: 91%;
+            display: block;
+            padding: 13px;
+            text-align: left;
+            margin-bottom: 10px;
             border-radius: 5px;
+            border: 1px solid rgb(133, 131, 131);
+        }
+
+        #submit {
+            width: 100%;
+            background-color: rgb(150, 200, 100);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 25px 0;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
             transition: 0.5s;
         }
 
-        .admin:hover {
+        #submit:hover {
             cursor: pointer;
-            background-color: rgb(95, 185, 95);
             transform: scale(1.05);
-            z-index: 2;
-            color: black;
+        }
+
+        a {
+            text-decoration: none;
+            color: red;
+        }
+
+        #form>label:nth-child(6) {
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
 
-    <a href="/index.html"><img src="/images/P&P Image.png" alt=""></a>
-    <div id="main">
-        <h1>Log in</h1>
-
-        <form>
-            <h4>Email address</h4>
-            <input type="text" placeholder="Enter your email" id="email">
-
-            <h4>Password</h4>
-            <input type="text" class="second" placeholder="Enter your password" id="password">
-
-            <a href="/index.html"><button type="submit" class="next">Next</button></a>
-        </form>
-
-        <hr>
-
-        <div id="apps">
-            <h3>Or login as</h3>
+    <!-- container -->
+    <div class="container">
+        <a href="/index.html">
+            <img src="/images/P&P Image.png" alt="">
+        </a>
+        <div id="box">
+            <h2>User Login</h2>
+            <form id="form">
+                <label for="email">Email Address/Username</label>
+                <input required type="text" placeholder="Enter email address or username" id="username">
+                <label for="password">Password</label>
+                <input required type="password" placeholder="Enter password" id="password">
+                <input type="submit" value="Sign In" id="submit">
+                <label for="password"><a href="#"> Forgot Password?</a></label>
+            </form>
         </div>
-        <button class="admin">ADMIN</button>
-
-        <h3>Don't have an account? <a href="signup.html" id="sign">Sign up</a></h3>
-
     </div>
 
 </body>
@@ -169,36 +117,48 @@
 
 <script>
 
-    let form = document.querySelector("form");
+    let userLoginObj = {};
 
-    let signupData = JSON.parse(localStorage.getItem("masai")) || [];
-    form.addEventListener("submit", myFun)
-    function myFun(event) {
+    let SignupForm = document.querySelector('#form');
+
+    let username = document.querySelector('#username');
+    console.log(username);
+    
+    let password = document.querySelector('#password');
+
+
+    SignupForm.addEventListener("submit", () => {
         event.preventDefault()
 
-        let x = document.querySelector("#email").value
-        let y = document.querySelector("#password").value
-        let flag = false
-        function login(data) {
-            for (let i = 0; i <= data.length - 1; i++) {
-                if (data[i].email === x && data[i].pass === y) {
-                    flag = true
-                    break;
-                }
+        fetch("http://localhost:8080/login", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+                userName: username.value,
+                password: password.value
+            })
+        }).then((e) => {
+            if (e.status == 200 || e.status == 201) {
+                alert("Login Successfull");
             }
-            if (x == "" || y == "") {
-                alert("please fill the details")
+            return e.json();
+        }).then((data) => {
+            if (data.messeage) {
+                alert(data.messeage);
+                if(data.messeage == "User already Logged In with this username"){
+                    window.location.href = "file:///C:/Users/yakhi/Downloads/Plant%20And%20Planters%20Frontend/Plant%20And%20Planters%20Frontend/index.html";
+                }
             } else {
-                if (flag == true) {
-                    alert("Welcome To Survey Homes")
-                    window.location.href = "index.html"
-
-                } else {
-                    alert("wrong credentials")
-                }
+                // stringifying the myCountryInfo object and 
+                // storing it in the localStorage
+                userLoginObj= data;
+                localStorage.setItem('userLoginObj', JSON.stringify(userLoginObj))
+                window.location.href = "file:///C:/Users/yakhi/Downloads/Plant%20And%20Planters%20Frontend/Plant%20And%20Planters%20Frontend/index.html";
             }
-        }
-        login(signupData)
-    }
+
+        }).catch((error) => console.log(error));
+    })
 
 </script>

@@ -5,160 +5,125 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLANT & PLANTERS</title>
-    <link rel="icon" href="/images/P&P Logo.png" type="image/icon type">
+    <title>Customer signup</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" />
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-        body {
-            background-color: rgb(240, 242, 244);
+        * {
+            padding: 0;
+            margin: 0;
             font-family: 'Poppins', sans-serif;
+        }
+
+        .box {
             width: 90%;
-            margin-top: 50px;
-            margin-left: 100px;
-            display: flex;
-        }
-
-        #main {
-            height: auto;
-            width: 35%;
-            margin: auto;
+            margin: 50px auto 50px;
             text-align: center;
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            background-color: white;
         }
 
-        #logo {
+        h1 {
+            text-decoration: underline;
+            margin-bottom: 50px;
+        }
+
+        .container {
+            width: 50%;
             margin: auto;
-            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 2px solid rgb(150, 200, 100);
+            border-radius: 10px;
+            padding-bottom: 30px;
+        }
+
+        .container>div>h4 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            margin-top: 25px;
+            color: rgb(29, 31, 34);
+        }
+
+        .container>div>input {
+            width: 80%;
+            height: 18px;
+            padding: 5px;
+            font-size: 12px;
+            margin: 12px 0;
+            border-radius: 3px;
+            border: 1px solid rgb(113, 121, 128);
+        }
+
+        .container>div>div {
             display: flex;
             justify-content: space-evenly;
+            text-align: center;
+            padding-top: 25px;
+        }
+
+        .container>div>div>div {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            font-size: 14px;
         }
 
-        #logo img {
-            margin-top: 20px;
-            width: 70px;
-        }
-
-        #log {
-            text-decoration: none;
-        }
-
-        #log:hover {
-            text-decoration-line: underline;
-        }
-
-        form>h3>a {
-            color: rgb(62, 190, 180);
-        }
-
-        form>h3 {
-            margin-top: 25px;
-            padding-left: 30%;
-            color: rgb(59, 58, 58);
-        }
-
-        form>h1 {
-            margin-top: 25px;
-            text-align: left;
-            padding-left: 10%;
-            color: rgb(59, 58, 58);
-        }
-
-        form>h4 {
-            text-align: left;
-            padding-left: 10%;
-            color: rgb(83, 82, 82);
+        .container>div>div>div>h4 {
+            font-size: 25px;
             margin-bottom: 10px;
+            margin-top: 25px;
+            color: rgb(29, 31, 34);
         }
 
-        form>input {
-            width: 75%;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid rgb(150, 200, 100);
-            background: transparent;
-        }
-
-        .check>span {
-            color: rgb(83, 82, 82);
-        }
-
-        .check1>span {
-            color: rgb(83, 82, 82);
-        }
-
-        .check {
-            padding-top: 5%;
-            text-align: left;
-            margin-left: 10%;
-            display: flex;
-        }
-
-        .check span {
-            margin-left: 8px;
-            margin-top: 4px;
-            font-size: 15px;
-        }
-
-        input.cb {
-            width: 20px;
-            height: 20px;
-        }
-
-        .check1 {
-            padding-top: 5%;
-            margin-left: 10%;
-            text-align: left;
-            display: flex;
-        }
-
-        .check1 span {
+        .container>div>div>div>input {
             width: 80%;
-            padding: 0 10px;
-            font-size: 15px;
+            height: 18px;
+            padding: 5px;
+            font-size: 12px;
+            margin: 12px 0;
+            border-radius: 3px;
+            border: 1px solid rgb(113, 121, 128);
         }
 
-        input.cb1 {
-            width: 20px;
-            height: 20px;
-        }
-
-        .terms {
-            text-decoration: none;
-            color: rgb(32, 133, 125);
-        }
-
-        .terms:hover {
-            text-decoration: underline;
-        }
-
-        .next {
-            width: 80%;
-            padding: 15px;
+        .box>button {
+            width: 25%;
+            padding: 5px;
+            font-size: 20px;
+            margin: 10px 0;
+            height: 40px;
             border-radius: 5px;
-            background-color: rgb(105, 220, 105);
-            font-size: 16px;
+            border: none;
             color: white;
-            margin-top: 20px;
+            margin-bottom: 30px;
             cursor: pointer;
-            border: 1px solid rgb(105, 220, 105);
+            background-color: rgb(150, 200, 100);
+            transition: 0.5s;
         }
 
-        .next:hover {
-            background-color: rgb(95, 185, 95);
-            transform: scale(1.05);
-            transition: 0.2s linear;
-            z-index: 2;
-            color: black;
+        .box>button:hover {
+            background-color: rgb(125, 220, 120);
         }
 
-        hr {
-            margin: 30px 50px 30px;
+        #show-details {
+            border: 1px solid rgb(117, 117, 117);
+            border-radius: 5px;
+            height: 40px;
+            width: 100%;
+            margin-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        #show-details>input {
+            width: 19.5%;
+            border: none;
+            position: absolute;
+            height: 29px;
+            padding-top: 7px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            font-size: 18px;
+            background: transparent;
         }
     </style>
 
@@ -166,36 +131,47 @@
 
 <body>
 
-    <a href="/index.html">
-        <img src="/images/P&P Image.png" alt="">
-    </a>
-    <div id="main">
-        <h1>Create an account</h1>
+    <div class="box">
+        <h1>Customer signup</h1>
 
-        <form>
-            <h4>Email address</h4>
-            <input type="text" placeholder="Enter your email" id="email">
-
-            <h4>Password</h4>
-            <input type="text" class="second" placeholder="Create your password" id="password">
-
-            <div class="check">
-                <input type="checkbox" class="cb" required>
-                <span> You agree to the <a href="" class="terms">Terms of Use</a> & <a href="" class="terms">Privacy
-                        Notice</a> </span>
-            </div>
-            <div class="check1">
-                <input type="checkbox" class="cb1">
-                <span> You agree to receive product news and special promotions via email. You can opt-out of these
-                    emails in your My Account page anytime.</span>
+        <div class="container">
+            <div>
+                <h4>Customer Details</h4>
+                <input required type="text" id="customerName" placeholder="Customer Name" />
+                <input required type="text" id="mobile" placeholder="Mobile Number" />
+                <input required type="text" id="email" placeholder="Email" />
+                <input required type="text" id="userName" placeholder="Username" />
+                <input required type="text" id="password" placeholder="Password" />
             </div>
 
-            <a href="/index.html"><button type="submit" class="next">Next</button></a>
-        </form>
+            <div>
+                <div>
+                    <div>
+                        <h3>Add Home Address</h3>
+                        <input required type="number" id="addressId" placeholder="Address Id" />
+                        <input required type="text" id="houseNo" placeholder="House Number" />
+                        <input required type="text" id="colony" placeholder="Colony" />
+                        <input required type="text" id="city" placeholder="City" />
+                        <input required type="text" id="state" placeholder="State" />
+                        <input required type="number" id="pinCode" placeholder="Pincode" />
+                        <input required type="text" id="addressType" placeholder="Address Type" />
+                    </div>
 
-        <hr>
+                    <div>
+                        <h3>Add Work Address</h3>
+                        <input required type="number" id="addressId1" placeholder="Address Id" />
+                        <input required type="text" id="houseNo1" placeholder="House Number" />
+                        <input required type="text" id="colony1" placeholder="Colony" />
+                        <input required type="text" id="city1" placeholder="City" />
+                        <input required type="text" id="state1" placeholder="State" />
+                        <input required type="number" id="pinCode1" placeholder="Pincode" />
+                        <input required type="text" id="addressType1" placeholder="Address Type" />
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <h3>Already have an account? <a href="login.html" id="log">Log in</a></h3>
+        <button id="add_Customer" class="u-full-width button button-primary">Sign up</button>
     </div>
 
 </body>
@@ -204,25 +180,84 @@
 
 <script>
 
-    let form = document.querySelector("form");
-    let Bag = JSON.parse(localStorage.getItem("masai")) || []
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
+    // Add planter
+    let pushData = document.getElementById('add_Customer')
 
-        let obj = {
-            email: form.email.value,
+    let customerName = document.getElementById("customerName");
+    let mobile = document.getElementById('mobile');
+    let email = document.getElementById('email');
+    let userName = document.getElementById('userName');
+    let password = document.getElementById('password');
 
-            pass: form.password.value
-        }
-        Bag.push(obj)
-        if (obj.email == "" || obj.password == "") {
-            alert("please fill the details")
-        } else {
 
-            localStorage.setItem("masai", JSON.stringify(Bag))
-            alert("Registerd successfuly")
-            window.location.href = "login.html";
-        }
+    let addressId = document.getElementById('addressId');
+    let houseNo = document.getElementById('houseNo');
+    let colony = document.getElementById('colony');
+    let city = document.getElementById('city');
+    let state = document.getElementById('state');
+    let pinCode = document.getElementById('pinCode');
+    let addressType = document.getElementById('addressType');
+
+    let addressId1 = document.getElementById('addressId1');
+    let houseNo1 = document.getElementById('houseNo1');
+    let colony1 = document.getElementById('colony1');
+    let city1 = document.getElementById('city1');
+    let state1 = document.getElementById('state1');
+    let pinCode1 = document.getElementById('pinCode1');
+    let addressType1 = document.getElementById('addressType1');
+
+    let responseObj = {};
+
+    pushData.addEventListener("click", () => {
+        fetch("http://localhost:8080/customers", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+                customerName: customerName.value,
+                mobile: mobile.value,
+                email: email.value,
+                userName: userName.value,
+                password: password.value,
+                addressSet: [
+                    {
+                        addressId: addressId.value,
+                        houseNo: houseNo.value,
+                        colony: colony.value,
+                        city: city.value,
+                        state: state.value,
+                        pinCode: pinCode.value,
+                        addressType: addressType.value
+                    },
+                    {
+                        addressId: addressId1.value,
+                        houseNo: houseNo1.value,
+                        colony: colony1.value,
+                        city: city1.value,
+                        state: state1.value,
+                        pinCode: pinCode1.value,
+                        addressType: addressType1.value
+                    }
+                ]
+            })
+        }).then((e) => {
+            if (e.status == 200 || e.status == 201) {
+                alert("Customer Added");
+            }
+            return e.json();
+        }).then((data) => {
+            if (data.customerName) {
+                responseObj = data
+                console.log(data);
+            } else {
+                responseObj = data;
+                console.log(responseObj);
+                alert(data.messeage);
+            }
+
+
+        }).catch((error) => console.log(error));
     })
 
 </script>
