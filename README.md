@@ -20,7 +20,6 @@ The application also includes user and admin validation and authentication.
 - MAVEN
 - MYSQL
 - JPQL
-- POSTMAN
 - HTML
 - CSS
 - JAVASCRIPT
