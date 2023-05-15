@@ -25,7 +25,7 @@ public class LoginServiceAdminImpl implements LoginAdminService {
 	
 
 	@Override
-	public String logIntoAccount(LoginDTO dto) throws LoginException {
+	public CurrentAdminSession logIntoAccount(LoginDTO dto) throws LoginException {
 		
 		Admin currentAdmin = adminRepository.findByUserName(dto.getUserName());
 		
@@ -51,7 +51,7 @@ public class LoginServiceAdminImpl implements LoginAdminService {
 			
 			currentAdminSessionRepository.save(currentAdminSession);
 
-			return currentAdminSession.toString();
+			return currentAdminSession;
 		}
 		else
 			throw new LoginException("Please Enter a valid password");

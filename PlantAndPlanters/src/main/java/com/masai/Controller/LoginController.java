@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.masai.Entity.CurrentUserSession;
 import com.masai.Entity.LoginDTO;
 import com.masai.Exception.LoginException;
 import com.masai.Service.LoginService;
@@ -23,11 +24,11 @@ public class LoginController {
 	private LoginService loginService;
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> logInCustomer(@RequestBody LoginDTO dto) throws LoginException {
+	public ResponseEntity<CurrentUserSession> logInCustomer(@RequestBody LoginDTO dto) throws LoginException {
 		
-		String result = loginService.logIntoAccount(dto);
+		CurrentUserSession session = loginService.logIntoAccount(dto);
 			
-		return new ResponseEntity<String>(result,HttpStatus.OK );
+		return new ResponseEntity<CurrentUserSession>(session,HttpStatus.OK );
 	}
 	
 	@PostMapping("/logout")

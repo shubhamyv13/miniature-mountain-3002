@@ -28,21 +28,21 @@ public class LoginServiceImpl implements LoginService{
 	private CurrentUserSessionRepository currentUserSessionRepository;
 		
 	@Override
-	public String logIntoAccount(LoginDTO dto)throws LoginException{
+	public CurrentUserSession logIntoAccount(LoginDTO dto)throws LoginException{
 		
 		
 		Customer existingCustomer= customerRepository.findByUserName(dto.getUserName());
 		
 		if(existingCustomer == null) {
 			
-			throw new LoginException("Please Enter a valid mobile number");
+			throw new LoginException("Please Enter a valid username number");
 				 
 		}	
 		Optional<CurrentUserSession> validCustomerSessionOpt =  currentUserSessionRepository.findById(existingCustomer.getCustomerId());
 		
 		if(validCustomerSessionOpt.isPresent()) {
 			
-			throw new LoginException("User already Logged In with this number");
+			throw new LoginException("User already Logged In with this username");
 			
 		}
 		
@@ -55,7 +55,7 @@ public class LoginServiceImpl implements LoginService{
 			
 			currentUserSessionRepository.save(currentUserSession);
 
-			return currentUserSession.toString();
+			return currentUserSession;
 		}
 		else
 			throw new LoginException("Please Enter a valid password");

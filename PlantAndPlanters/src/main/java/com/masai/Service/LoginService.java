@@ -5,7 +5,7 @@ import com.masai.Entity.*;
 
 public interface LoginService {
 	
-	public String logIntoAccount(LoginDTO dto)throws LoginException;
+	public CurrentUserSession logIntoAccount(LoginDTO dto)throws LoginException;
 
 	public String logOutFromAccount(String key)throws LoginException;
 
