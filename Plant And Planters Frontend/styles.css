@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -10,54 +12,53 @@ body>a {
 
 #top {
     margin: auto;
-    width: auto;
-    height: auto;
-    position: sticky;
     top: 0;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    padding-left: 50px;
-    padding-right: 50px;
+    position: sticky;
+    z-index: 10;
     background-color: white;
     border-radius: 0px 0px 10px 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    z-index: 10;
 }
 
-#top>div:nth-child(2) {
-    width: 80%;
+#top>div {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#top>div>div:nth-child(2) {
+    width: 90%;
     height: auto;
+    margin-left: 25px;
 }
 
-#top>div>div {
+#top>div>div>div {
     display: flex;
     justify-content: space-between;
     text-align: left;
-    margin-right: 25px;
     margin-top: 5px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
-#top>div>div>input {
+#top>div>div>div>input {
     height: 25px;
     width: 100%;
-    margin-right: 20px;
     padding-left: 20px;
     border: 0.5px solid gray;
     border-radius: 5px;
 }
 
-#top>div>div>a>img {
-    margin-left: 40px;
+#top>div>div>div>a>img {
     height: 30px;
+    margin-left: 50px;
 }
 
-#top>div>div>a>button {
+#top>div>div>div>a>button {
     margin-top: 10px;
     padding: 5px 10px 5px;
     color: white;
-    background-color: rgb(150, 200, 100);
+    background-color: rgb(4,130,4);
     border: 0px;
     border-radius: 4px;
     font-size: small;
@@ -65,18 +66,17 @@ body>a {
     transition: 0.5s;
 }
 
-#top>div>div>a>button:hover {
+#top>div>div>div>a>button:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
 
-#top>div>a>img {
-    margin: 0px 25px 0px;
+#top>div>div>a>img {
     height: 100px;
 }
 
 #nav {
-    margin: 25px auto 25px;
+    margin: 20px auto 20px;
     width: 90%;
     height: 50px;
     align-items: center;
@@ -89,8 +89,7 @@ body>a {
 #nav>div {
     align-items: center;
     text-align: center;
-    padding: 10px;
-    font-size: 15px;
+    padding: 15px;
 }
 
 #nav>div {
@@ -116,7 +115,7 @@ body>a {
 #banner {
     width: 90%;
     border-radius: 10px;
-    margin: 25px auto 25px;
+    margin: 20px auto 20px;
 }
 
 #banner>img {
@@ -133,7 +132,7 @@ body>a {
 
 #banner-mid {
     width: 90%;
-    margin: 25px auto 25px;
+    margin: 0 auto 25px;
 }
 
 #banner-mid>div {
@@ -144,7 +143,7 @@ body>a {
 }
 
 #banner-mid>div>img {
-    width: 55vh;
+    width: 31%;
     height: auto;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -162,6 +161,24 @@ body>a {
     font-weight: 500;
     font-size: 25px;
     color: rgb(150, 200, 100);
+}
+
+#bottom-banner {
+    width: 90%;
+    border-radius: 10px;
+    margin: 25px auto 25px;
+}
+
+#bottom-banner>img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: 0.5s;
+}
+
+#bottom-banner>img:hover {
+    cursor: pointer;
+    transform: scale(1.015);
 }
 
 #bottom {
@@ -376,6 +393,7 @@ h1 {
 
 #container {
     margin: auto;
+    width: 90%;
     padding: 0px 40px 40px;
     height: auto;
     display: grid;

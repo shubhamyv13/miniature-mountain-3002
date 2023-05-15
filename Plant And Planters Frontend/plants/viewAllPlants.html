@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Data</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: auto;
+            text-align: center;
+            padding: 0;
+            width: 90%;
+        }
+
+        table {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        table th,
+        table td,
+        table tr {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            color: black;
+            height: 20px;
+            background-color: white;
+
+        }
+
+        table th {
+            background-color: rgb(150, 200, 100);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Plant Data</h1>
+    <table>
+        <!-- Dont change order of columns -->
+        <thead>
+            <tr>
+                <th>Plant Height</th>
+                <th>Plant Spread</th>
+                <th>Common Name</th>
+                <th>Bloom Time</th>
+                <th>Medicinal Use</th>
+                <th>Difficulty Level</th>
+                <th>Temperature</th>
+                <th>Type Of Plant</th>
+                <th>Plant Description</th>
+                <th>Plant Stock</th>
+                <th>Plant Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Append your output here -->
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+
+<script>
+
+    let responseObj = [];
+
+    function getData(todoarr) {
+        document.querySelector("tbody").innerHTML = ""
+        todoarr.forEach(function (elem) {
+
+            // document.querySelector("tbody").innerHTML= "";     If we do this here, it will lead to updation of earh tds
+            let row = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerText = elem.plantHeight;
+            let td2 = document.createElement("td")
+            td2.innerText = elem.plantSpread
+            let td3 = document.createElement("td");
+            td3.innerText = elem.commonName;
+            let td4 = document.createElement("td");
+            td4.innerText = elem.bloomTime;
+            let td5 = document.createElement("td")
+            td5.innerText = elem.medicinalOrCulinaryUse;
+            let td6 = document.createElement("td");
+            td6.innerText = elem.difficultyLevel;
+            let td7 = document.createElement("td");
+            td7.innerText = elem.temperature;
+            let td8 = document.createElement("td");
+            td8.innerText = elem.typeOfPlant;
+            let td9 = document.createElement("td");
+            td9.innerText = elem.plantDescription;
+            let td10 = document.createElement("td");
+            td10.innerText = elem.plantsStock;
+            let td11 = document.createElement("td");
+            td11.innerText = elem.plantCost;
+
+            row.append(td1, td2, td3, td4, td5, td6, td7, td8, td9, td10, td11);
+
+            document.querySelector("tbody").append(row);
+        });
+    }
+
+    window.addEventListener("load", () => {
+        fetch("http://localhost:8080/plants", {
+            method: "GET",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(),
+        }).then((e) => {
+            return e.json();
+        }).then((data) => {
+            responseObj = data;
+            getData(responseObj);
+        }).catch((error) => console.log(error));
+    })
+
+
+</script>

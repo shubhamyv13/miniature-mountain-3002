@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" />
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            margin: 50px auto 50px;
+            text-align: center;
+        }
+
+        h1 {
+            text-decoration: underline;
+            margin-bottom: 50px;
+        }
+
+        #box {
+            display: flex;
+            justify-content: space-between;
+            border-radius: 5px;
+            height: auto;
+        }
+
+        .left-container {
+            width: 30%;
+            margin: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgb(150, 200, 100);
+            border-radius: 5px;
+            padding-bottom: 30px;
+        }
+
+        .left-container>h4 {
+            font-size: 25px;
+            margin-bottom: 10px;
+            margin-top: 25px;
+            color: rgb(29, 31, 34);
+        }
+
+        .left-container>input {
+            width: 80%;
+            height: 18px;
+            padding: 5px;
+            font-size: 12px;
+            margin: 12px 0;
+            border-radius: 3px;
+            border: 1px solid rgb(113, 121, 128);
+        }
+
+        .left-container>select {
+            width: 100%;
+            padding: 5px;
+            height: 40px;
+            font-size: 18px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid rgb(113, 121, 128);
+        }
+
+        .container>button {
+            width: 25%;
+            padding: 5px;
+            font-size: 20px;
+            margin: 10px 0;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            margin-bottom: 30px;
+            cursor: pointer;
+            background-color: rgb(150, 200, 100);
+            transition: 0.5s;
+        }
+
+        .container>button:hover {
+            background-color: rgb(125, 220, 120);
+        }
+
+        #show-details {
+            border: 1px solid rgb(117, 117, 117);
+            border-radius: 5px;
+            height: 40px;
+            width: 100%;
+            margin-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        #show-details>input {
+            width: 19.5%;
+            border: none;
+            position: absolute;
+            height: 29px;
+            padding-top: 7px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            font-size: 18px;
+            background: transparent;
+        }
+
+        .material-symbols-outlined {
+            padding-top: 8px;
+            margin-left: 18vw;
+        }
+
+        #left-container-labels>div {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            font-size: 19px;
+            color: rgb(51, 62, 72);
+        }
+
+        input[type=radio] {
+            height: 20px;
+            width: 20px;
+        }
+
+        #left-container-labels>div>input {
+            cursor: pointer;
+        }
+
+        #left-container-labels>div>label {
+            padding-left: 10px;
+            user-select: none;
+            font-weight: lighter;
+        }
+
+        #show {
+            color: rgb(49, 191, 111);
+        }
+
+        #show-all-templates {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 25px;
+            color: rgb(41, 45, 49);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Add Plant</h1>
+        <div id="box">
+            <div class="left-container">
+                <h4>Add Plant Details</h4>
+                <input required type="text" id="plantHeight" placeholder="Plant height" />
+                <input required type="text" id="plantSpread" placeholder="Plant Spread" />
+                <input required type="text" id="commonName" placeholder="Common Name" />
+                <input required type="text" id="bloomTime" placeholder="Bloom Time" />
+                <input required type="text" id="medicinalOrCulinaryUse" placeholder="Medicinal Use" />
+                <input required type="text" id="difficultyLevel" placeholder="Difficulty Level" />
+                <input required type="text" id="plantTemperature" placeholder="Temperature" />
+                <input required type="text" id="typeOfPlant" placeholder="Type of Plant" />
+                <input required type="text" id="plantDescription" placeholder="Plant Description" />
+                <input required type="text" id="plantsStock" placeholder="Plant Stock" />
+                <input required type="text" id="plantCost" placeholder="Plant Cost" />
+            </div>
+        </div>
+
+        <button id="add_Plant" class="u-full-width button button-primary">Add Plant</button>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // Add Plant
+    let pushData = document.getElementById('add_Plant')
+
+    let plantHeight = document.getElementById("plantHeight");
+    let plantSpread = document.getElementById('plantSpread');
+    let commonName = document.getElementById('commonName');
+    let bloomTime = document.getElementById('bloomTime');
+    let medicinalOrCulinaryUse = document.getElementById('medicinalOrCulinaryUse');
+    let difficultyLevel = document.getElementById('difficultyLevel');
+    let temperature = document.getElementById('plantTemperature');
+    let typeOfPlant = document.getElementById('typeOfPlant');
+    let plantDescription = document.getElementById('plantDescription');
+    let plantsStock = document.getElementById('plantsStock');
+    let plantCost = document.getElementById('plantCost');
+
+    let responseObj = {};
+
+    pushData.addEventListener("click", () => {
+        fetch("http://localhost:8080/plants", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+
+                plantHeight: plantHeight.value,
+                plantSpread: plantSpread.value,
+                commonName: commonName.value,
+                bloomTime: bloomTime.value,
+                medicinalOrCulinaryUse: medicinalOrCulinaryUse.value,
+                difficultyLevel: difficultyLevel.value,
+                temperature: temperature.value,
+                typeOfPlant: typeOfPlant.value,
+                plantDescription: plantDescription.value,
+                plantsStock: plantsStock.value,
+                plantCost: plantCost.value
+            }
+            )
+        }).then((e) => {
+            if (e.status == 200 || e.status == 201) {
+                alert("Plant Added");
+                window.location.reload();
+            }
+            return e.json();
+        }).then((data) => {
+            responseObj = data
+            console.log(data);
+        }).catch((error) => console.log(error));
+    })
+
+</script>

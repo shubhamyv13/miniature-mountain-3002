@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLANT & PLANTERS</title>
+    <link rel="icon" href="/images/P&P Logo.png" type="image/icon type">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body {
+            background-color: rgb(240, 242, 244);
+            font-family: 'Poppins', sans-serif;
+            width: 90%;
+            margin-top: 75px;
+            margin-left: 100px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #main {
+            height: auto;
+            width: 30%;
+            margin: 50px auto 50px;
+            padding-top: 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color: white;
+        }
+
+        form {
+            padding-bottom: 50px;
+        }
+
+        form>h3>a {
+            color: rgb(62, 190, 180);
+        }
+
+        form>h3 {
+            margin-top: 25px;
+            padding-left: 30%;
+            color: rgb(59, 58, 58);
+        }
+
+        form>h1 {
+            margin-top: 25px;
+            text-align: left;
+            padding-left: 10%;
+            color: rgb(59, 58, 58);
+        }
+
+        form>h4 {
+            text-align: left;
+            padding-left: 10%;
+            color: rgb(83, 82, 82);
+            margin-bottom: 10px;
+        }
+
+        form>input {
+            width: 75%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid rgb(85, 200, 85);
+            background: transparent;
+        }
+
+        .next {
+            margin-top: 25px;
+            width: 80%;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: rgb(105, 220, 105);
+            font-size: 16px;
+            color: white;
+            border: 1px solid rgb(105, 220, 105);
+            transition: 0.5s linear;
+        }
+
+        .next:hover {
+            cursor: pointer;
+            background-color: rgb(95, 185, 95);
+            transform: scale(1.05);
+            z-index: 2;
+            color: black;
+        }
+
+        table {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        table th,
+        table td,
+        table tr {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            color: black;
+            height: 20px;
+            background-color: white;
+
+        }
+
+        table th {
+            background-color: rgb(150, 200, 100);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+
+        <h1>Planter by ID</h1>
+        <form>
+            <h4>PlanterId</h4>
+            <input type="text" placeholder="Enter PlanterId" id="plantId">
+
+            <a href="/index.html"><button type="submit" class="next">View</button></a>
+        </form>
+
+    </div>
+
+    <table>
+        <!-- Dont change order of columns -->
+        <thead>
+            <tr>
+                <th>Height</th>
+                <th>Spread</th>
+                <th>Common Name</th>
+                <th>Bloom Time</th>
+                <th>Medicinal Use</th>
+                <th>Difficulty Level</th>
+                <th>Temperature</th>
+                <th>Type of Plant</th>
+                <th>Description</th>
+                <th>Stock</th>
+                <th>Cost</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Append your output here -->
+        </tbody>
+    </table>
+</body>
+
+</html>
+
+<script>
+
+    let responseObj = [];
+
+    let form = document.querySelector("form");
+
+    form.addEventListener("submit", () => {
+        event.preventDefault()
+        let x = document.getElementById("plantId");
+        console.log(x.value);
+        let url = `http://localhost:8080/plants/${x.value}`;
+        fetch(url, {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json",
+            },
+        }).then((e) => {
+            if (e.status == 200 || e.status == 201) {
+                alert("Plant Deleted");
+            }
+            return e.json();
+        }).then((data) => {
+            if (data.plantHeight) {
+                console.log(data)
+                responseObj.push(data)
+                //responseObj = data;
+                getData(responseObj);
+            } else {
+                console.log(data);
+                alert(data.messeage);
+            }
+
+        }).catch((error) => console.log(error));
+    })
+
+    function getData(todoarr) {
+        document.querySelector("tbody").innerHTML = ""
+        todoarr.forEach(function (elem) {
+
+            // document.querySelector("tbody").innerHTML= "";     If we do this here, it will lead to updation of earh tds
+            let row = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerText = elem.plantHeight;
+            let td2 = document.createElement("td")
+            td2.innerText = elem.plantSpread
+            let td3 = document.createElement("td");
+            td3.innerText = elem.commonName;
+            let td4 = document.createElement("td");
+            td4.innerText = elem.bloomTime;
+            let td5 = document.createElement("td")
+            td5.innerText = elem.medicinalOrCulinaryUse;
+            let td6 = document.createElement("td");
+            td6.innerText = elem.difficultyLevel;
+            let td7 = document.createElement("td");
+            td7.innerText = elem.temperature;
+            let td8 = document.createElement("td");
+            td8.innerText = elem.typeOfPlant;
+            let td9 = document.createElement("td");
+            td9.innerText = elem.plantDescription;
+            let td10 = document.createElement("td");
+            td10.innerText = elem.plantsStock;
+            let td11 = document.createElement("td");
+            td11.innerText = elem.plantCost;
+            let td12 = document.createElement("td");
+            td12.innerText = "Deleted";
+            td12.style.color = "red";
+
+            row.append(td1, td2, td3, td4, td5, td6, td7, td8, td9, td10, td11, td12);
+
+            document.querySelector("tbody").append(row);
+        });
+    }
+
+
+
+
+</script>

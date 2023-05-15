@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Data</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: auto;
+            text-align: center;
+            padding: 0;
+            width: 90%;
+        }
+
+        table {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        table th,
+        table td,
+        table tr {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            color: black;
+            height: 20px;
+            background-color: white;
+
+        }
+
+        table th {
+            background-color: rgb(150, 200, 100);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>All Orders</h1>
+    <table>
+        <!-- Dont change order of columns -->
+        <thead>
+            <tr>
+                <th>Booking OrderId</th>
+                <th>Order Date</th>
+                <th>Transaction Mode</th>
+                <th>Quantity</th>
+                <th>Total Cost</th>
+                <th>Customer Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Append your output here -->
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+
+<script>
+
+    function getData(todoarr) {
+        document.querySelector("tbody").innerHTML = ""
+        todoarr.forEach(function (elem) {
+
+            // document.querySelector("tbody").innerHTML= "";     If we do this here, it will lead to updation of earh tds
+            let row = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerText = elem.bookingOrderId;
+            let td2 = document.createElement("td")
+            td2.innerText = elem.orderDate;
+            let td3 = document.createElement("td");
+            td3.innerText = elem.transactionMode;
+            let td4 = document.createElement("td");
+            td4.innerText = elem.quantity;
+            let td5 = document.createElement("td")
+            td5.innerText = elem.totalCost;
+            let td6 = document.createElement("td");
+            td6.innerText = elem.customerId;
+
+            row.append(td1, td2, td3, td4, td5, td6);
+
+            document.querySelector("tbody").append(row);
+        });
+    }
+
+    let responseObj = [];
+
+    window.addEventListener("load", () => {
+        fetch("http://localhost:8080/orders", {
+            method: "GET",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify()
+        }).then((e) => {
+            return e.json();
+        }).then((data) => {
+            responseObj.push(data);
+            getData(responseObj);
+        }).catch((error) => console.log(error));
+    })
+
+</script>
